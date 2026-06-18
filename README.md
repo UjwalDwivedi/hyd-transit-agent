@@ -1,4 +1,4 @@
-
+cat << 'EOF' > README.md
 # Hyderabad Smart City Transit Agent (hyd-transit-agent)
 
 An intelligent, multi-agent conversational transit assistant for Hyderabad. This system leverages LangGraph to orchestrate parallel data streams—combining live weather metadata, real-time TomTom traffic telemetry, and web-scraped local events—into a unified, context-aware commuter advisory synthesized via Groq (Llama 3.1).
@@ -9,6 +9,7 @@ An intelligent, multi-agent conversational transit assistant for Hyderabad. This
 
 The application is built as a stateful graph where a central NLP Supervisor node dynamically assesses user intent before broadcasting requests to specialized worker agents in parallel.
 
+```text
                [ User Input ]
                       │
                       ▼
@@ -27,9 +28,7 @@ The application is built as a stateful graph where a central NLP Supervisor node
                       │
                       ▼
          [ Context-Aware Advisory ]
-
----
-
+```
 ## Core Components & Features
 
 * **NLP Supervisor / Assessor Node:** Uses Groq to parse natural, casual human language queries (e.g., "Is it going to rain near Kukatpally if I head out in an hour?") and cleanly extract the target neighborhood or landmark, bypassing rigid keyword matching.
